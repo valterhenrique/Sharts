@@ -5,13 +5,9 @@ import chart.DrawRingChart;
 import chart.PDF;
 import dao.PieChartDAO;
 import dao.RingChartDAO;
-import model.PieChart;
-import model.RingChart;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import parse.CSV;
 import parse.Excel;
-
-import java.util.List;
 
 /**
  * Author: Valter
@@ -24,7 +20,7 @@ public class Application {
         PieChartDAO pieChartDAO = context.getBean(PieChartDAO.class);
         pieChartDAO.save(excel.getPieChartData());
 
-        DrawPieChart drawPieChart = new DrawPieChart("ANTEIL AM FONDSVERMÖGEN", pieChartDAO.list());
+        DrawPieChart drawPieChart = new DrawPieChart("ANTEIL AM FONDSVERM\u00D6GEN", pieChartDAO.list());
         drawPieChart.draw();
 
         CSV CSV = new CSV("input/Ring Chart Data.csv");

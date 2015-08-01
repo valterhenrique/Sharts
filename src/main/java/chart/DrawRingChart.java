@@ -55,7 +55,9 @@ public class DrawRingChart extends Chart
         plot.setNoDataMessage("No data available");
         plot.setSectionDepth(0.54999999999999998D);
         plot.setCircular(true);
-        plot.setLabelGap(0.02D);
+        plot.setSeparatorsVisible(false);
+        plot.setShadowPaint(new Color(0.0f, 0.0f, 0.0f, 0.0f));
+        //plot.setLabelGap(0.02D);
         plot.setLabelGenerator(null);
         plot.setBackgroundPaint(Color.WHITE);
         plot.setOutlineVisible(false); //remove image border
@@ -109,8 +111,8 @@ public class DrawRingChart extends Chart
     @Override
     protected void savePNG(JFreeChart jfreechart) {
         try {
-            int width = 640; /* Width of the image */
-            int height = 480; /* Height of the image */
+            int width = 500;
+            int height = 500;
             File file = new File("output/RingChart.png");
             ChartUtilities.saveChartAsPNG(file, jfreechart, width, height);
         } catch (IOException e) {

@@ -17,6 +17,7 @@ import org.jfree.data.general.DefaultPieDataset;
 import org.jfree.data.general.PieDataset;
 import org.jfree.ui.HorizontalAlignment;
 import org.jfree.ui.RectangleEdge;
+import org.jfree.ui.RectangleInsets;
 import org.jfree.ui.VerticalAlignment;
 
 import java.awt.*;
@@ -35,7 +36,8 @@ public class DrawPieChart extends Chart
     private String title;
     private List<PieChart> list;
 
-    public DrawPieChart(String title, List<PieChart> list) {
+    public DrawPieChart(String title, List<PieChart> list)
+    {
         this.title = title;
         this.list = list;
     }
@@ -66,6 +68,7 @@ public class DrawPieChart extends Chart
         Color transparent = new Color(0.0f, 0.0f, 0.0f, 0.0f);
 
         PiePlot plot = (PiePlot) chart.getPlot();
+        plot.setCircular(true);
         plot.setSimpleLabels(true);
         PieSectionLabelGenerator generator = new StandardPieSectionLabelGenerator("{2}");
         plot.setLabelGenerator(generator);
@@ -73,13 +76,21 @@ public class DrawPieChart extends Chart
         plot.setOutlineVisible(false); //remove image border
 
         // label
-        plot.setLabelFont(new Font("Courier New", Font.BOLD, 16));
+        plot.setLabelFont(new Font("SansSerif", Font.BOLD, 15));
         plot.setLabelPaint(Color.WHITE);
         plot.setLabelBackgroundPaint(transparent); //background
         plot.setLabelOutlinePaint(transparent); //border
         plot.setLabelShadowPaint(transparent); //shadow
 
         // legend
+        chart.removeLegend();
+        FlowArrangement hlayout = new FlowArrangement(HorizontalAlignment.CENTER, VerticalAlignment.CENTER, 537, 1);
+        LegendTitle legend = new LegendTitle(plot, hlayout, new ColumnArrangement());
+        legend.setItemFont(new Font("SansSerif", 0, 14));
+        legend.setPadding(0,70,0,0);
+        legend.setPosition(RectangleEdge.BOTTOM);
+        chart.addLegend(legend);
+
         plot.setLegendLabelGenerator(new StandardPieSectionLabelGenerator("{0}: {1}"));
         plot.setBaseSectionOutlinePaint(Color.WHITE);
         plot.setSectionOutlinesVisible(true);
@@ -88,15 +99,9 @@ public class DrawPieChart extends Chart
         TextTitle title = new TextTitle(this.title);
         title.setFont(new Font("SansSerif", 0, 12));
         title.setPosition(RectangleEdge.BOTTOM);
-        title.setHorizontalAlignment(HorizontalAlignment.CENTER);
+        title.setHorizontalAlignment(HorizontalAlignment.LEFT);
+        title.setPadding(0,70,0,0);
         chart.addSubtitle(title);
-
-        chart.removeLegend();
-        FlowArrangement hlayout = new FlowArrangement(HorizontalAlignment.CENTER, VerticalAlignment.CENTER, 537, 1);
-        LegendTitle legend = new LegendTitle(plot, hlayout, new ColumnArrangement());
-        legend.setItemFont(new Font("SansSerif", 0, 12));
-        legend.setPosition(RectangleEdge.BOTTOM);
-        chart.addLegend(legend);
 
         return chart;
     }
@@ -143,8 +148,8 @@ public class DrawPieChart extends Chart
     protected void savePNG(JFreeChart chart)
     {
         try {
-            int width = 537; /* Width of the image */
-            int height = 750; /* Height of the image */
+            int width = 537;
+            int height = 750;
             File file = new File("output/PieChart.png");
             ChartUtilities.saveChartAsPNG(file, chart, width, height);
         } catch (IOException e) {
