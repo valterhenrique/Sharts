@@ -5,7 +5,6 @@
     <file url="file://$PROJECT_DIR$/src/main/java/dao" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/src/main/java/model" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/src/main/java/run" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/main/java/useful/parse" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/src/main/java/util/chart/Chart.java" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/src/main/java/util/chart/DrawPieChart.java" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/src/main/java/util/chart/DrawRingChart.java" charset="windows-1252" />

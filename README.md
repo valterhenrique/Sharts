@@ -14,7 +14,7 @@ The main goal of this project is:
 
 ### Tech
 
-This project uses a number of open source projects to work properly:
+Dillinger uses a number of open source projects to work properly:
 
 * [Spring] - helps development to  build a simple, portable,  fast and flexible JVM-based systems and applications
 * [Hibernate] - an open source Java persistence framework project. 
@@ -26,7 +26,25 @@ This project uses a number of open source projects to work properly:
 
 ### Installation 
 
-Clone it and open it with IntelliJ IDEA.
+Clone it, dump the database, open it with IntelliJ IDEA.
+
+DDL Postgres:
+```sh
+CREATE TABLE pie_chart
+(
+    id SERIAL DEFAULT nextval('pie_chart_id_seq'::regclass) NOT NULL,
+    country VARCHAR,
+    weight DOUBLE PRECISION
+);
+
+CREATE TABLE ring_chart
+(
+    id SERIAL DEFAULT nextval('ring_chart_id_seq'::regclass) NOT NULL,
+    date DATE,
+    security VARCHAR,
+    weighting DOUBLE PRECISION
+);
+```
 
 ### How to run
 
