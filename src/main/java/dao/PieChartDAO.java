@@ -5,12 +5,14 @@ import model.PieChart;
 import java.util.List;
 
 /**
- * Created by Valter on 7/30/2015.
+ * Author: Valter
  */
-public interface PieChartDAO {
-    public void save(PieChart pieChart);
-    public void save(List<PieChart> list);
+public interface PieChartDAO
+{
+	void save(PieChart pieChart);
 
-    List<PieChart> list();
+	void save(List<PieChart> list);
+
+	List<PieChart> list();
 
 }

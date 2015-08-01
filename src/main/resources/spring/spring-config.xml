@@ -15,8 +15,8 @@
               <property name="dataSource" ref="dataSource" />
               <property name="annotatedClasses">
                      <list>
-                            <value>model.RingChart</value>
                             <value>model.PieChart</value>
+                            <value>model.RingChart</value>
                      </list>
               </property>
               <property name="hibernateProperties">
@@ -28,10 +28,10 @@
               </property>
        </bean>
 
-       <bean id="ringChartDAO" class="dao.RingChartDAOImpl">
+       <bean id="pieChartDAO" class="dao.PieChartDAOImpl">
               <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
        </bean>
-       <bean id="pieChartDAO" class="dao.PieChartDAOImpl">
+       <bean id="ringChartDAO" class="dao.RingChartDAOImpl">
               <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
        </bean>
 

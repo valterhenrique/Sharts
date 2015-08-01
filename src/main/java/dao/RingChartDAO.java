@@ -5,12 +5,14 @@ import model.RingChart;
 import java.util.List;
 
 /**
- * Created by Valter on 7/30/2015.
+ * Author: Valter
  */
-public interface RingChartDAO {
+public interface RingChartDAO
+{
 
-    public void save(RingChart ringChart);
-    public void save(List<RingChart> ringChartList);
+	void save(RingChart ringChart);
 
-    public List<RingChart> list();
+	void save(List<RingChart> ringChartList);
+
+	List<RingChart> list();
 }
