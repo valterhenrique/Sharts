@@ -14,7 +14,7 @@ The main goal of this project is:
 
 ### Tech
 
-Sharts uses a number of open source projects to work properly:
+This project uses a number of open source projects to work properly:
 
 * [Spring] - helps development to  build a simple, portable,  fast and flexible JVM-based systems and applications
 * [Hibernate] - an open source Java persistence framework project. 
