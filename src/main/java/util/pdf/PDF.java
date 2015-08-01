@@ -1,4 +1,4 @@
-package chart;
+package util.pdf;
 
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
@@ -11,8 +11,15 @@ import java.io.IOException;
 /**
  * Author: Valter
  */
+
+/**
+ * Generates a PDF file.
+ */
 public class PDF
 {
+	/**
+	 * Generates a PDF file with both charts attached to it.
+	 */
 	public void generate()
 	{
 		Document document = new Document();

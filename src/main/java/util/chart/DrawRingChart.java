@@ -1,4 +1,4 @@
-package chart;
+package util.chart;
 
 import model.RingChart;
 import org.jfree.chart.ChartFactory;
