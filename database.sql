@@ -136,7 +136,6 @@ ALTER TABLE ONLY ring_chart ALTER COLUMN id SET DEFAULT nextval('ring_chart_id_s
 --
 
 COPY pie_chart (id, country, weight) FROM stdin;
-\.
 
 
 --
@@ -155,7 +154,6 @@ SELECT pg_catalog.setval('pie_chart_id_seq', 1097, true);
 --
 
 COPY ring_chart (id, date, security, weighting) FROM stdin;
-\.
 
 
 --
