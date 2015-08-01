@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="3172852764">
+    <data-source source="LOCAL" name="PostgreSQL - Charts@localhost" uuid="d44cf76a-1b7f-477a-91e0-13bd8a3453a5">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/Charts</jdbc-url>
+      <libraries />
+    </data-source>
+  </component>
+</project>
